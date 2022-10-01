@@ -66,5 +66,32 @@ const Login = async (req, res)=>{
     }
 }
 
+const GetAllUser = async (req, res)=>{
+  try {
+    const getAll = await Auth.findAll();
+    res.status(200).json(getAll);
+  } catch (error) {
+    res.status(500).json(error);
+  }
+}
 
-module.exports = {Login, Register};
+const UpdateAdmin = async (req, res)=>{
+  const newbody = req.body;
+  try {
+    const updateAppointment = await Auth.update(newbody, {
+      where: {
+        id: req.query.id,
+      },
+    });
+     res.status(200).json(newbody);
+  } catch (error) {
+      res.status(500).json(error);
+  }
+}
+
+
+
+
+
+
+module.exports = { Login, Register, GetAllUser, UpdateAdmin };
