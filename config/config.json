@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "root",
+    "password": null,
+    "database": "database_development",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "zuzim",
+    "password": "Ajo!09309789617",
+    "database": "bermudez_mobileapp",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "b8fb3e0aea852c",
+    "password": "623ecbaf",
+    "database": "heroku_90915921a3f3efb",
+    "host": "us-cdbr-east-06.cleardb.net",
+    "dialect": "mysql"
+  }
+}
