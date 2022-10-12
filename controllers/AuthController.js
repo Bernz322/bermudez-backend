@@ -90,8 +90,34 @@ const UpdateAdmin = async (req, res)=>{
 }
 
 
+//Get Auth by User
+const AuthGetByUser = async (req, res)=>{
+    try {
+        const getAuth = await Auth.findAll({
+          where: {
+            [Op.and]: [
+              { firstname: req.query.firstname },
+              { middlename: req.query.middlename },
+              { lastname: req.query.lastname },
+            ],
+          },
+        });
+
+        res.status(200).json(getAuth);
+    } catch (error) {
+        res.status(500).json(error)
+    }
+}
 
 
 
 
-module.exports = { Login, Register, GetAllUser, UpdateAdmin };
+
+
+module.exports = {
+  Login,
+  Register,
+  GetAllUser,
+  UpdateAdmin,
+  AuthGetByUser,
+};
