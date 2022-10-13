@@ -2,7 +2,7 @@ const db = require('../models')
 const Auth = db.auth;
 const cryptoJS = require('crypto-js');
 require('dotenv').config();
-
+const { Op } = require("sequelize");
 
 const Register = async (req, res)=>{
     try {
